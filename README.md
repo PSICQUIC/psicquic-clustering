@@ -2,6 +2,8 @@
 
 To install run:
 ```
+git clone https://github.com/PSICQUIC/psicquic-clustering.git
+cd psicquic-clustering
 mvn clean install
 ```
 
