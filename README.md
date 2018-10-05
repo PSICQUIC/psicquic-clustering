@@ -1,8 +1,15 @@
-2010-10-04
-----------
+# psicquic-clustering
 
-SPRING SETUP
-------------
+To install run:
+```
+git clone https://github.com/PSICQUIC/psicquic-clustering.git
+cd psicquic-clustering
+mvn clean install
+```
+
+## Spring Setup
+
+**Last updated: 2010-10-04**
 
 If you intend to use this library, you will have to setup Spring on your end.
 The section below explain how you shoul dbe creating a DataSource to hold springbatch data and you will do so
@@ -18,9 +25,7 @@ Now you could initilize spring using the following method call:
 This will initialize spring with the base clustering config and your added one.
 
 
-
-SPRING BATCH SETUP
-------------------
+## Spring Batch Setup
 
 Should you want to use this library, you will have to configure the Spring Batch DataSource so that all job definition
 and instances get persisted into an RDBMS. Thereafter, we assume you are installing it in H2.
