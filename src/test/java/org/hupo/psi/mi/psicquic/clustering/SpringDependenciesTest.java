@@ -2,7 +2,6 @@ package org.hupo.psi.mi.psicquic.clustering;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
