@@ -3,9 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:batch="http://www.springframework.org/schema/batch"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-                           http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.1.xsd
-                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                           http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
     <context:component-scan base-package="org.hupo.psi.mi.psicquic.clustering"/>
     <context:annotation-config/>
@@ -48,7 +48,7 @@
 
     <!-- Quartz scheduling -->
 
-    <bean id="clusteringScheduler" class="org.springframework.scheduling.quartz.JobDetailBean">
+    <bean id="clusteringScheduler" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
         <property name="jobClass" value="org.hupo.psi.mi.psicquic.clustering.ClusteringLauncher"/>
 
         <!-- Note that we cannot use @Autowired in the quartz job as it is instancited by Quartz, so is
@@ -64,7 +64,7 @@
         </property>
     </bean>
 
-    <bean id="clusteringTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+    <bean id="clusteringTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
         <!-- our launcher -->
         <property name="jobDetail" ref="clusteringScheduler"/>
         <!-- 5 seconds -->

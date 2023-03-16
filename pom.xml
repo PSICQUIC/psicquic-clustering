@@ -4,7 +4,7 @@
 
     <groupId>org.hupo.psi.mi.psicquic</groupId>
     <artifactId>psicquic-clustering</artifactId>
-    <version>1.4.1-SNAPSHOT</version>
+    <version>1.5.0</version>
 
     <packaging>jar</packaging>
 
@@ -18,13 +18,13 @@
     </scm>
 
     <properties>
-        <spring.version>3.1.2.RELEASE</spring.version>
-        <spring.batch.version>2.1.8.RELEASE</spring.batch.version>
+        <spring.version>4.3.30.RELEASE</spring.version>
+        <spring.batch.version>3.0.10.RELEASE</spring.batch.version>
         <config.file>classpath*:/clustering.properties</config.file>
-        <psicquic.client.version>1.6.0</psicquic.client.version>
-        <psicquic.simple.client.version>1.4.0</psicquic.simple.client.version>
-        <psicquic.registry.client.version>1.4.0</psicquic.registry.client.version>
-        <psimitab.search.version>1.8.6</psimitab.search.version>
+        <psicquic.client.version>1.7.0</psicquic.client.version>
+        <psicquic.simple.client.version>1.5.1</psicquic.simple.client.version>
+        <psicquic.registry.client.version>1.5.0</psicquic.registry.client.version>
+        <psimitab.search.version>1.10.0</psimitab.search.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -78,10 +78,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
+                <version>3.10.1</version>
                 <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
 
@@ -101,7 +101,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>3.2.0</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -117,10 +117,10 @@
         <profile>
             <id>disable-java8-doclint</id>
             <activation>
-                <jdk>[1.8,)</jdk>
+                <jdk>[11,)</jdk>
             </activation>
             <properties>
-                <additionalparam>-Xdoclint:none</additionalparam>
+                <doclint>none</doclint>
             </properties>
         </profile>
     </profiles>
@@ -131,7 +131,7 @@
         <dependency>
             <groupId>uk.ac.ebi.enfin.mi.cluster</groupId>
             <artifactId>micluster</artifactId>
-            <version>1.7.13</version>
+            <version>1.8.0</version>
             <!--We exclude the psicquic libraries to overwrite them with the latest version-->
             <exclusions>
                 <exclusion>
@@ -165,19 +165,6 @@
             <groupId>org.hupo.psi.mi.psicquic</groupId>
             <artifactId>psicquic-registry-client</artifactId>
             <version>${psicquic.registry.client.version}</version>
-        </dependency>
-
-        <!-- Logging -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.6.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.6.6</version>
-            <optional>true</optional>
         </dependency>
 
         <!-- PSI-MI Standards -->
@@ -241,14 +228,14 @@
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz</artifactId>
-            <version>1.8.3</version>
+            <version>2.3.2</version>
         </dependency>
 
         <!--Testing-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -256,7 +243,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>1.3.168</version>
+            <version>1.4.197</version>
             <scope>test</scope>
         </dependency>
 
@@ -276,12 +263,16 @@
 
     <repositories>
         <repository>
+            <id>intact.nexus</id>
+            <url>https://www.ebi.ac.uk/intact/maven/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
             <id>nexus-ebi-release-repo</id>
-            <url>http://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-repo/</url>
+            <url>https://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-repo/</url>
         </repository>
         <repository>
             <id>nexus-ebi-snapshot-repo</id>
-            <url>http://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-snapshots/</url>
+            <url>https://www.ebi.ac.uk/Tools/maven/repos/content/groups/ebi-snapshots/</url>
         </repository>
     </repositories>
 
@@ -290,14 +281,14 @@
         <repository>
             <id>pst-release</id>
             <name>EBI Nexus Repository</name>
-            <url>http://www.ebi.ac.uk/Tools/maven/repos/content/repositories/pst-release</url>
+            <url>https://www.ebi.ac.uk/Tools/maven/repos/content/repositories/pst-release/</url>
         </repository>
         <!-- EBI SNAPSHOT repo -->
         <snapshotRepository>
             <uniqueVersion>false</uniqueVersion>
             <id>pst-snapshots</id>
             <name>EBI Nexus Snapshots Repository</name>
-            <url>http://www.ebi.ac.uk/Tools/maven/repos/content/repositories/pst-snapshots</url>
+            <url>https://www.ebi.ac.uk/Tools/maven/repos/content/repositories/pst-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
