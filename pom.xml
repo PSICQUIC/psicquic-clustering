@@ -24,7 +24,7 @@
         <psicquic.client.version>1.7.1</psicquic.client.version>
         <psicquic.simple.client.version>1.5.2</psicquic.simple.client.version>
         <psicquic.registry.client.version>1.5.0</psicquic.registry.client.version>
-        <psimitab.search.version>1.10.0</psimitab.search.version>
+        <psimitab.search.version>1.10.1</psimitab.search.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
