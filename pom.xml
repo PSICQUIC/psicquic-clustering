@@ -4,7 +4,7 @@
 
     <groupId>org.hupo.psi.mi.psicquic</groupId>
     <artifactId>psicquic-clustering</artifactId>
-    <version>1.5.3-SNAPSHOT</version>
+    <version>1.5.3</version>
 
     <packaging>jar</packaging>
 
@@ -21,11 +21,11 @@
         <spring.version>4.3.30.RELEASE</spring.version>
         <spring.batch.version>3.0.10.RELEASE</spring.batch.version>
         <config.file>classpath*:/clustering.properties</config.file>
-        <psicquic.client.version>1.7.2-SNAPSHOT</psicquic.client.version>
-        <psicquic.simple.client.version>1.5.3-SNAPSHOT</psicquic.simple.client.version>
+        <psicquic.client.version>1.7.2</psicquic.client.version>
+        <psicquic.simple.client.version>1.5.3</psicquic.simple.client.version>
         <psicquic.registry.client.version>1.5.1</psicquic.registry.client.version>
-        <psimitab.search.version>1.10.2-SNAPSHOT</psimitab.search.version>
-        <micluster.version>1.9.0-SNAPSHOT</micluster.version>
+        <psimitab.search.version>1.10.2</psimitab.search.version>
+        <micluster.version>1.9.0</micluster.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
