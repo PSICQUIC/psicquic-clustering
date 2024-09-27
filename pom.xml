@@ -4,7 +4,7 @@
 
     <groupId>org.hupo.psi.mi.psicquic</groupId>
     <artifactId>psicquic-clustering</artifactId>
-    <version>1.5.2</version>
+    <version>1.5.3</version>
 
     <packaging>jar</packaging>
 
@@ -21,10 +21,11 @@
         <spring.version>4.3.30.RELEASE</spring.version>
         <spring.batch.version>3.0.10.RELEASE</spring.batch.version>
         <config.file>classpath*:/clustering.properties</config.file>
-        <psicquic.client.version>1.7.1</psicquic.client.version>
-        <psicquic.simple.client.version>1.5.2</psicquic.simple.client.version>
-        <psicquic.registry.client.version>1.5.0</psicquic.registry.client.version>
-        <psimitab.search.version>1.10.1</psimitab.search.version>
+        <psicquic.client.version>1.7.2</psicquic.client.version>
+        <psicquic.simple.client.version>1.5.3</psicquic.simple.client.version>
+        <psicquic.registry.client.version>1.5.1</psicquic.registry.client.version>
+        <psimitab.search.version>1.10.2</psimitab.search.version>
+        <micluster.version>1.9.0</micluster.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -131,7 +132,7 @@
         <dependency>
             <groupId>uk.ac.ebi.enfin.mi.cluster</groupId>
             <artifactId>micluster</artifactId>
-            <version>1.8.0</version>
+            <version>${micluster.version}</version>
             <!--We exclude the psicquic libraries to overwrite them with the latest version-->
             <exclusions>
                 <exclusion>

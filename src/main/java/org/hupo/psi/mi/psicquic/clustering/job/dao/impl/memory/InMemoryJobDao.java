@@ -106,11 +106,7 @@ public class InMemoryJobDao implements JobDao {
 
         List<ClusteringJob> jobs = new ArrayList<ClusteringJob>(jobid2job.values());
         removeNonQueued(jobs);
-        Collections.sort(jobs, new Comparator<ClusteringJob>() {
-            public int compare(ClusteringJob o1, ClusteringJob o2) {
-                return o1.getCreated().compareTo(o2.getCreated());
-            }
-        });
+        jobs.sort(Comparator.comparing(ClusteringJob::getCreated));
 
         if (!jobs.isEmpty()) {
             nextJob = jobs.get(0);
