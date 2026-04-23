@@ -53,13 +53,13 @@ public class DefaultInteractionClusteringServiceTest extends ClusteringTestCase 
         Assert.assertNotNull( response.getResultInfo().getResultType() );
         Assert.assertEquals( InteractionClusteringService.RETURN_TYPE_MITAB25, response.getResultInfo().getResultType() );
 
-        Assert.assertEquals( 99, response.getResultInfo().getTotalResults() );
+        Assert.assertEquals( 100, response.getResultInfo().getTotalResults() );
 
         Assert.assertNotNull( response.getResultSet() );
         Assert.assertNull( response.getResultSet().getEntrySet() );
         final String mitab = response.getResultSet().getMitab();
         Assert.assertNotNull( mitab );
 
-        Assert.assertEquals( 99, mitab.split( "\n" ).length );
+        Assert.assertEquals( 100, mitab.split( "\n" ).length );
     }
 }
